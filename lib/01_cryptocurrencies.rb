@@ -16,6 +16,7 @@ arr.each {|k,v| arr[k] = v.to_f}
 # le max
 crypto_max_value = arr.max_by{|k,v| v}
 
+
 puts "le crypto #{crypto_max_value[0]} avec #{crypto_max_value[1]} a la plus grosse valeur"
 
 #crypto min value 
@@ -29,7 +30,13 @@ puts "les cryptomonnaies inferieur à 6000 :"
 
 print arr.select {|k,v| v<6000}.flatten 
 
-# cour supérieur à 6000
-puts "\n \n les cryptomonnaies supérieur à 6000 : "
+# La devise la plus chère parmi celles dont le cours est inférieur à 6000.
 
-print arr.select {|k,v| v>6000}.flatten
+
+
+l = arr.select {|k,v| v<6000}.flatten 
+
+crypto_max_val = l.max_by{|k,v| v}
+
+
+puts "\n \n La devise la plus chère parmi celles dont le cours est inférieur à 6000 est le #{crypto_max_val}: "
